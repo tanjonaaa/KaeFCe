@@ -1,10 +1,13 @@
 package com.kfc.api.endpoint.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Set;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
-public record Menu(int id, String name, Set<Ingredient> ingredients, double sellingPrice) {
+public record Menu(
+    int id,
+    String name,
+    Set<Ingredient> ingredients,
+    @JsonProperty("selling_price") double sellingPrice) {
   public double getCostPrice() {
     return ingredients.stream()
         .mapToDouble(ingredient -> ingredient.unitPrice() * ingredient.quantity())
