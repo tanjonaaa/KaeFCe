@@ -4,8 +4,6 @@ import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor
-@Getter
 public record Menu(int id, String name, Set<Ingredient> ingredients, double sellingPrice) {
   public double getCostPrice() {
     return ingredients.stream()

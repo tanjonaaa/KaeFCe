@@ -1,9 +1,8 @@
 package com.kfc.api.repository.model;
 
+import java.time.Instant;
 import lombok.Builder;
 import lombok.Data;
-
-import java.time.Instant;
 
 @Builder
 @Data
